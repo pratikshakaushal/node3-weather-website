@@ -10,6 +10,7 @@ const forecast=require('./utils/forecast')
 
 //express is a function and we call it to create new application
 const app=express()                        //take no arguments
+const port=process.env.PORT || 3000
 
 //define path for express config
 const publicDirectoryPath=path.join(__dirname,'../public')
@@ -97,8 +98,8 @@ app.get('*',(req,res) => {
     })
 })
 
-app.listen(3000, ()=>{          //(port,callback)
-    console.log('server is up on port 3000')
+app.listen(port, ()=>{          //(port,callback)
+    console.log('server is up on port' + port)
 })
 //template engine -> handlebars allow us to randor dynamic documents and easily to create code which can be reuse
 // app.get('', (req, res) => {          // let us configure what server should do when someone try to get resource by specific url(tale route and function as a parameter)
